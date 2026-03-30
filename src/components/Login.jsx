@@ -18,7 +18,11 @@ export const Login = ({ onSwitchToSignup }) => {
   return (
     <div className="auth-container">
       <div className="auth-card">
+        <span className="auth-kicker">Welcome back</span>
         <h2>Login</h2>
+        <p className="auth-copy">
+          Sign in to continue working with your saved quantity measurement tools.
+        </p>
         <form onSubmit={handleSubmit} className="auth-form">
           <div className="form-group">
             <label>Username:</label>

@@ -1,125 +1,272 @@
-/* Main App Container */
 .app-container {
+  position: relative;
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top left, rgba(248, 197, 120, 0.3), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(106, 138, 255, 0.22), transparent 32%),
+    linear-gradient(135deg, #f6efe4 0%, #eef4ff 45%, #f5f8ff 100%);
 }
 
-/* Header */
+.app-backdrop {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(6px);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.app-backdrop-left {
+  width: 320px;
+  height: 320px;
+  top: 90px;
+  left: -120px;
+  background: rgba(210, 127, 52, 0.14);
+}
+
+.app-backdrop-right {
+  width: 380px;
+  height: 380px;
+  right: -140px;
+  bottom: 120px;
+  background: rgba(48, 91, 212, 0.1);
+}
+
 .app-header {
-  background: rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
-  padding: 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 1;
+  padding: 32px 24px 18px;
 }
 
 .header-content {
-  max-width: 1200px;
+  max-width: 1240px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 28px 32px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  border-radius: 28px;
+  backdrop-filter: blur(18px);
+  box-shadow: 0 22px 60px rgba(25, 41, 72, 0.12);
+}
+
+.brand-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 720px;
+}
+
+.brand-tag {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(210, 127, 52, 0.12);
+  color: #9a4d16;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .app-header h1 {
-  color: white;
+  color: #16213d;
   margin: 0;
-  font-size: 28px;
-  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.brand-subtitle {
+  max-width: 60ch;
+  color: #53627f;
+  font-size: 1rem;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.user-pill {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 160px;
+  padding: 12px 16px;
+  border-radius: 18px;
+  background: rgba(245, 247, 252, 0.9);
+  border: 1px solid rgba(77, 102, 151, 0.16);
+  color: #1e2b4a;
+}
+
+.user-pill-label {
+  font-size: 12px;
+  color: #647190;
 }
 
 .logout-btn {
-  background: rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, #1d3f8f 0%, #315ad1 100%);
   color: white;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 10px 20px;
-  border-radius: 25px;
+  border: 1px solid rgba(19, 53, 134, 0.28);
+  padding: 12px 18px;
+  border-radius: 16px;
   cursor: pointer;
   font-size: 14px;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+  box-shadow: 0 14px 24px rgba(49, 90, 209, 0.22);
 }
 
 .logout-btn:hover {
-  background: rgba(255, 255, 255, 0.3);
-  border-color: rgba(255, 255, 255, 0.5);
   transform: translateY(-2px);
+  box-shadow: 0 18px 28px rgba(49, 90, 209, 0.26);
 }
 
-/* Navigation */
+.app-shell {
+  position: relative;
+  z-index: 1;
+  width: min(1240px, calc(100% - 48px));
+  margin: 0 auto 36px;
+}
+
 .app-nav {
   display: flex;
-  gap: 10px;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.05);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  justify-content: center;
-  flex-wrap: wrap;
+  gap: 14px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 24px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 18px 44px rgba(25, 41, 72, 0.08);
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  overflow-x: auto;
 }
 
 .nav-btn {
-  padding: 12px 24px;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 150px;
+  padding: 16px 18px;
+  border: 1px solid transparent;
+  background: rgba(248, 250, 255, 0.88);
+  color: #33405d;
+  border-radius: 18px;
   cursor: pointer;
   font-size: 14px;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+  text-align: left;
+  flex: 1;
 }
 
 .nav-btn:hover {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.95);
+  transform: translateY(-1px);
 }
 
 .nav-btn.active {
-  background: white;
-  color: #667eea;
-  border-color: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #1f3e87 0%, #305bd7 100%);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.28);
+  box-shadow: 0 20px 32px rgba(48, 91, 215, 0.24);
 }
 
-/* Main Content */
+.nav-btn-label {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.nav-btn-meta {
+  font-size: 12px;
+  color: inherit;
+  opacity: 0.74;
+}
+
 .app-main {
-  flex: 1;
-  padding: 30px;
-  overflow-y: auto;
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
+  padding: 26px 0 0;
 }
 
-/* Responsive */
+.section-intro {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 22px;
+  padding: 0 4px;
+}
+
+.section-intro-tag {
+  color: #9a4d16;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.section-intro h2 {
+  margin: 0;
+  font-size: clamp(1.75rem, 2.3vw, 2.3rem);
+  color: #16213d;
+  letter-spacing: -0.03em;
+}
+
+.section-intro p {
+  max-width: 64ch;
+  color: #5a6885;
+  font-size: 1rem;
+}
+
 @media (max-width: 768px) {
   .app-header {
-    padding: 15px;
+    padding: 18px 16px 14px;
   }
 
   .header-content {
     flex-direction: column;
-    gap: 15px;
-    text-align: center;
+    gap: 18px;
+    padding: 22px 18px;
+  }
+
+  .brand-block {
+    max-width: 100%;
   }
 
   .app-header h1 {
-    font-size: 22px;
+    font-size: 2rem;
+  }
+
+  .header-actions {
+    width: 100%;
+    justify-content: stretch;
+  }
+
+  .user-pill,
+  .logout-btn {
+    width: 100%;
+  }
+
+  .app-shell {
+    width: calc(100% - 24px);
+    margin-bottom: 24px;
   }
 
   .app-nav {
-    padding: 15px;
-    gap: 8px;
+    gap: 10px;
+    border-radius: 20px;
   }
 
   .nav-btn {
-    padding: 10px 16px;
-    font-size: 12px;
-  }
-
-  .app-main {
-    padding: 20px;
+    min-width: 140px;
+    padding: 14px;
   }
 }

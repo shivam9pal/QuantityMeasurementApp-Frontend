@@ -46,7 +46,7 @@ export const History = () => {
   return (
     <div className="history-container">
       <h3>Measurement History</h3>
-      
+
       <div className="history-filter">
         <label>Filter by Operation:</label>
         <select value={operationFilter} onChange={(e) => setOperationFilter(e.target.value)}>
@@ -68,7 +68,7 @@ export const History = () => {
                 <span className="operation-badge">{item.operation}</span>
                 <span className="history-id">#{item.id}</span>
               </div>
-              
+
               <div className="history-content">
                 {item.operation === 'COMPARE' && (
                   <>
@@ -120,7 +120,7 @@ export const History = () => {
                 {item.operation === 'DIVIDE' && (
                   <>
                     <p>
-                      <strong>Dividing:</strong> {item.thisValue} {item.thisUnit} ÷{' '}
+                      <strong>Dividing:</strong> {item.thisValue} {item.thisUnit} /{' '}
                       {item.thatValue} {item.thatUnit}
                     </p>
                     <p>

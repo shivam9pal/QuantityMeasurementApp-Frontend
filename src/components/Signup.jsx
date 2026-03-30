@@ -26,7 +26,11 @@ export const Signup = ({ onSwitchToLogin }) => {
   return (
     <div className="auth-container">
       <div className="auth-card">
+        <span className="auth-kicker">Create account</span>
         <h2>Sign Up</h2>
+        <p className="auth-copy">
+          Set up your account to compare, convert, and track quantity measurements.
+        </p>
         <form onSubmit={handleSubmit} className="auth-form">
           <div className="form-group">
             <label>Username:</label>

@@ -130,9 +130,7 @@ export const Compare = () => {
 
         {result !== null && (
           <div className="result-box">
-            <p className="result">
-              {result ? '✓ Equal' : '✗ Not Equal'}
-            </p>
+            <p className="result">{result ? 'Equal' : 'Not Equal'}</p>
           </div>
         )}
         {error && <p className="error-message">{error}</p>}

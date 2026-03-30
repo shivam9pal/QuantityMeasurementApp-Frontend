@@ -1,59 +1,61 @@
-/* History Container */
 .history-container {
-  background: white;
-  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(247, 250, 255, 0.9) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 28px;
   padding: 30px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 24px 60px rgba(27, 40, 68, 0.12);
+  backdrop-filter: blur(18px);
 }
 
 .history-container h3 {
-  color: #333;
+  color: #16213d;
   margin: 0 0 20px 0;
-  font-size: 22px;
-  font-weight: 700;
-  border-bottom: 3px solid #667eea;
-  padding-bottom: 15px;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
 .history-container > p {
   text-align: center;
-  color: #999;
+  color: #74809a;
   font-size: 16px;
 }
 
 .history-container .error {
   padding: 15px;
-  background: rgba(231, 76, 60, 0.1);
-  color: #e74c3c;
-  border-left: 5px solid #e74c3c;
-  border-radius: 8px;
+  background: rgba(214, 69, 69, 0.1);
+  color: #d64545;
+  border: 1px solid rgba(214, 69, 69, 0.18);
+  border-radius: 16px;
   font-size: 14px;
 }
 
-/* History Filter */
 .history-filter {
   display: flex;
   gap: 12px;
   align-items: center;
   margin-bottom: 25px;
-  padding: 15px;
-  background: #f8f9fa;
-  border-radius: 10px;
+  padding: 18px;
+  background: linear-gradient(180deg, rgba(243, 247, 255, 0.92) 0%, rgba(251, 246, 240, 0.82) 100%);
+  border: 1px solid rgba(207, 218, 239, 0.8);
+  border-radius: 20px;
 }
 
 .history-filter label {
-  color: #555;
+  color: #485777;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
   white-space: nowrap;
 }
 
 .history-filter select {
-  padding: 8px 12px;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
+  padding: 12px 14px;
+  border: 1px solid #d7deeb;
+  border-radius: 14px;
   font-size: 14px;
-  background: white;
+  background: rgba(255, 255, 255, 0.95);
   cursor: pointer;
   transition: all 0.3s ease;
   font-family: inherit;
@@ -63,15 +65,14 @@
 
 .history-filter select:focus {
   outline: none;
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  border-color: #305bd7;
+  box-shadow: 0 0 0 4px rgba(48, 91, 215, 0.12);
 }
 
-/* History List */
 .history-list {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 16px;
   max-height: 60vh;
   overflow-y: auto;
   padding-right: 10px;
@@ -82,38 +83,38 @@
 }
 
 .history-list::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: rgba(255, 255, 255, 0.5);
   border-radius: 10px;
 }
 
 .history-list::-webkit-scrollbar-thumb {
-  background: #667eea;
+  background: rgba(48, 91, 215, 0.65);
   border-radius: 10px;
 }
 
 .history-list::-webkit-scrollbar-thumb:hover {
-  background: #764ba2;
+  background: rgba(31, 62, 135, 0.85);
 }
 
 .no-history {
   text-align: center;
-  color: #999;
+  color: #74809a;
   font-size: 16px;
   padding: 40px 20px;
 }
 
-/* History Item */
 .history-item {
-  padding: 15px;
-  border: 2px solid #e0e0e0;
-  border-radius: 10px;
+  padding: 18px;
+  border: 1px solid rgba(214, 224, 239, 0.9);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.74);
   transition: all 0.3s ease;
   position: relative;
 }
 
 .history-item:hover {
-  border-color: #667eea;
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+  border-color: rgba(48, 91, 215, 0.45);
+  box-shadow: 0 16px 32px rgba(48, 91, 215, 0.12);
 }
 
 .history-header {
@@ -125,8 +126,8 @@
 
 .operation-badge {
   display: inline-block;
-  padding: 6px 12px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 8px 12px;
+  background: linear-gradient(135deg, #1f3e87 0%, #305bd7 100%);
   color: white;
   border-radius: 20px;
   font-size: 12px;
@@ -134,14 +135,13 @@
 }
 
 .history-id {
-  color: #999;
+  color: #74809a;
   font-size: 12px;
   font-weight: 600;
 }
 
-/* History Content */
 .history-content {
-  color: #555;
+  color: #53627f;
   font-size: 14px;
   line-height: 1.6;
 }
@@ -151,32 +151,31 @@
 }
 
 .history-content strong {
-  color: #333;
+  color: #16213d;
   font-weight: 700;
 }
 
 .error-badge {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  padding: 4px 10px;
-  background: #e74c3c;
+  top: 12px;
+  right: 12px;
+  padding: 5px 10px;
+  background: #d64545;
   color: white;
   border-radius: 20px;
   font-size: 10px;
   font-weight: 700;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .history-container {
     padding: 20px;
+    border-radius: 22px;
   }
 
   .history-container h3 {
     font-size: 18px;
     margin-bottom: 15px;
-    padding-bottom: 10px;
   }
 
   .history-filter {

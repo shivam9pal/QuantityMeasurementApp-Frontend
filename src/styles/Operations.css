@@ -1,26 +1,25 @@
-/* Operation Card */
 .operation-card {
-  background: white;
-  border-radius: 16px;
-  padding: 30px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(247, 250, 255, 0.9) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 28px;
+  padding: 32px;
+  box-shadow: 0 24px 60px rgba(27, 40, 68, 0.12);
   margin-bottom: 20px;
+  backdrop-filter: blur(18px);
 }
 
 .operation-card h3 {
-  color: #333;
+  color: #16213d;
   margin: 0 0 25px 0;
-  font-size: 22px;
-  font-weight: 700;
-  border-bottom: 3px solid #667eea;
-  padding-bottom: 15px;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
-/* Operation Form */
 .operation-form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 22px;
 }
 
 .operation-selector {
@@ -30,17 +29,19 @@
 }
 
 .operation-selector label {
-  color: #555;
+  color: #485777;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
 .operation-selector select {
-  padding: 10px 14px;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
+  padding: 14px 16px;
+  border: 1px solid #d7deeb;
+  border-radius: 14px;
   font-size: 14px;
-  background: white;
+  background: rgba(255, 255, 255, 0.88);
   cursor: pointer;
   transition: all 0.3s ease;
   font-family: inherit;
@@ -48,18 +49,18 @@
 
 .operation-selector select:focus {
   outline: none;
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  border-color: #305bd7;
+  box-shadow: 0 0 0 4px rgba(48, 91, 215, 0.12);
 }
 
-/* Quantity Inputs */
 .quantity-inputs {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  padding: 20px;
-  background: #f8f9fa;
-  border-radius: 10px;
+  gap: 18px;
+  padding: 22px;
+  background: linear-gradient(180deg, rgba(243, 247, 255, 0.92) 0%, rgba(251, 246, 240, 0.82) 100%);
+  border: 1px solid rgba(207, 218, 239, 0.8);
+  border-radius: 22px;
 }
 
 .quantity-group {
@@ -69,37 +70,39 @@
 }
 
 .quantity-group label {
-  color: #555;
+  color: #485777;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
 .input-row {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
 .input-row input,
 .input-row select,
 .quantity-group select {
-  padding: 10px 14px;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
+  padding: 14px 16px;
+  border: 1px solid #d7deeb;
+  border-radius: 14px;
   font-size: 14px;
-  background: white;
+  background: rgba(255, 255, 255, 0.95);
   transition: all 0.3s ease;
   font-family: inherit;
   flex: 1;
-  min-width: 100px;
+  min-width: 130px;
 }
 
 .input-row input:focus,
 .input-row select:focus,
 .quantity-group select:focus {
   outline: none;
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  border-color: #305bd7;
+  box-shadow: 0 0 0 4px rgba(48, 91, 215, 0.12);
 }
 
 .input-row select:focus,
@@ -107,24 +110,24 @@
   cursor: pointer;
 }
 
-/* Buttons */
 .operation-form > button {
-  padding: 14px 28px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 16px 28px;
+  background: linear-gradient(135deg, #1f3e87 0%, #305bd7 100%);
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 16px;
   font-weight: 700;
   font-size: 16px;
   cursor: pointer;
   transition: all 0.3s ease;
   align-self: center;
   min-width: 160px;
+  box-shadow: 0 16px 28px rgba(48, 91, 215, 0.22);
 }
 
 .operation-form > button:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 20px 32px rgba(48, 91, 215, 0.28);
 }
 
 .operation-form > button:disabled {
@@ -132,47 +135,46 @@
   cursor: not-allowed;
 }
 
-/* Result Box */
 .result-box {
-  padding: 20px;
-  background: #f0f9ff;
-  border-left: 5px solid #667eea;
-  border-radius: 8px;
+  padding: 20px 22px;
+  background: linear-gradient(135deg, rgba(235, 244, 255, 0.95) 0%, rgba(244, 250, 255, 0.95) 100%);
+  border: 1px solid rgba(165, 196, 245, 0.7);
+  border-radius: 18px;
   margin-top: 10px;
 }
 
 .result {
   margin: 0;
-  color: #167f48;
-  font-size: 18px;
-  font-weight: 700;
+  color: #154f78;
+  font-size: 20px;
+  font-weight: 800;
   text-align: center;
 }
 
 .error-message {
   padding: 15px;
-  background: rgba(231, 76, 60, 0.1);
-  color: #e74c3c;
-  border-left: 5px solid #e74c3c;
-  border-radius: 8px;
+  background: rgba(214, 69, 69, 0.1);
+  color: #d64545;
+  border: 1px solid rgba(214, 69, 69, 0.18);
+  border-radius: 16px;
   margin-top: 10px;
   font-size: 14px;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .operation-card {
     padding: 20px;
+    border-radius: 22px;
   }
 
   .operation-card h3 {
     font-size: 18px;
     margin-bottom: 15px;
-    padding-bottom: 10px;
   }
 
   .quantity-inputs {
     padding: 15px;
+    border-radius: 18px;
   }
 
   .input-row {
