@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // In development, requests go through Vite proxy
 // In production, use the backend URL directly
-const API_BASE_URL = 'https://13.206.8.23';
+const API_BASE_URL = 'https://api.smartmeeter.online';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
