@@ -1,0 +1,191 @@
+/* Operation Card */
+.operation-card {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  margin-bottom: 20px;
+}
+
+.operation-card h3 {
+  color: #333;
+  margin: 0 0 25px 0;
+  font-size: 22px;
+  font-weight: 700;
+  border-bottom: 3px solid #667eea;
+  padding-bottom: 15px;
+}
+
+/* Operation Form */
+.operation-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.operation-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.operation-selector label {
+  color: #555;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.operation-selector select {
+  padding: 10px 14px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.operation-selector select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Quantity Inputs */
+.quantity-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+.quantity-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.quantity-group label {
+  color: #555;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.input-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.input-row input,
+.input-row select,
+.quantity-group select {
+  padding: 10px 14px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  background: white;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  flex: 1;
+  min-width: 100px;
+}
+
+.input-row input:focus,
+.input-row select:focus,
+.quantity-group select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.input-row select:focus,
+.quantity-group select:focus {
+  cursor: pointer;
+}
+
+/* Buttons */
+.operation-form > button {
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: center;
+  min-width: 160px;
+}
+
+.operation-form > button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
+}
+
+.operation-form > button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Result Box */
+.result-box {
+  padding: 20px;
+  background: #f0f9ff;
+  border-left: 5px solid #667eea;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.result {
+  margin: 0;
+  color: #167f48;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.error-message {
+  padding: 15px;
+  background: rgba(231, 76, 60, 0.1);
+  color: #e74c3c;
+  border-left: 5px solid #e74c3c;
+  border-radius: 8px;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .operation-card {
+    padding: 20px;
+  }
+
+  .operation-card h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+  }
+
+  .quantity-inputs {
+    padding: 15px;
+  }
+
+  .input-row {
+    flex-direction: column;
+  }
+
+  .input-row input,
+  .input-row select {
+    min-width: unset;
+  }
+
+  .operation-form > button {
+    width: 100%;
+    min-width: unset;
+  }
+}
