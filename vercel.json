@@ -1,0 +1,5 @@
+{
+  "projectName": "quantitymeasurement-frontend",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist"
+}
